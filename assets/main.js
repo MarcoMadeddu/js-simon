@@ -15,26 +15,27 @@ for( var i = 0; i < 5; i++){
 
 alert("Ecco i numeri: \n" + pcArray + "\npronto?");
 
-setTimeout(myf, 30000 );
+setTimeout(function(){
 
-function myf(){
   for( var i = 0; i < 5; i++){
     var myNumber = parseInt(prompt("inserisci un numero"));
     controlloValidita(myNumber , myArray);
   }
-}
-
-for( var i = 0; i < 5; i++){
-  var control = myArray[i];
-  if(pcArray.includes(control)){
-    punteggio++;
-    uguali += control + " ";
+  for( var i = 0; i < 5; i++){
+    var control = myArray[i];
+    if(pcArray.includes(control)){
+      punteggio++;
+      uguali += control + " ";
+    }
   }
-}
+  console.log("pc: " +pcArray);
+  console.log("my: " + myArray);
+  console.log("Hai trovato " + punteggio +  " numeri uguali\n Sono: " + uguali);
 
-console.log("pc: " +pcArray);
-console.log("my: " + myArray);
-console.log("Hai trovato " + punteggio +  " numeri uguali\n Sono: " + uguali);
+},30000);
+
+
+
 
 
 
